@@ -1,6 +1,14 @@
 # app
 
 A new Flutter project.
+Includes:
+
+1. Drawer
+2. Bottom App Bar
+3. With refined App structure
+4. Api Configuration
+5. Navigator
+
 
 ## Getting Started
 
