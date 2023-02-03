@@ -22,7 +22,7 @@ class About extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
                Center(
-                  child:   Container(
+                  child: Container(
                     padding: const EdgeInsets.all(4.0),
                     decoration:  BoxDecoration(
                    color: Colors.blue,

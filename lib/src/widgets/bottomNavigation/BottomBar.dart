@@ -28,7 +28,7 @@ static final List<FloatingActionButtonLocation> centerLocations =
           onPressed: () {}, 
           tooltip: 'Search',
           icon: const Icon(Icons.search), ),
-          IconButton(onPressed: () {}, 
+          IconButton(onPressed: () {Navigator.pushReplacementNamed(context, '/albums');}, 
           icon: const Icon(Icons.favorite),
           tooltip: 'Favorite',
           )

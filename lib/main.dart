@@ -1,5 +1,6 @@
 
 import 'package:app/src/models/person_model.dart';
+import 'package:app/src/screens/albums.dart';
 import 'package:flutter/material.dart';
 import 'package:app/practice.dart';
 import 'package:app/src/screens/home.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       '/about':(context) => const About(),
       '/profile':(context)=>  Profile(person: Person(),),
       '/updateProfile':(context) =>  UpdateProfile(person: Person(),),
+      '/albums':(context) => const MyAlbums(),
       },
     );
   }
