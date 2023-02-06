@@ -13,7 +13,7 @@ class _BottomAppBarPage extends State<HomePage>{
    bool _showNotch=true;
    bool _showFab=true; 
   FloatingActionButtonLocation _fabLocation=FloatingActionButtonLocation.centerDocked;
- 
+  
   void onShowNotchChanged(bool value)
   {
     setState(() {

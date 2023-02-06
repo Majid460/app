@@ -1,4 +1,6 @@
 
+import 'package:app/src/blocs/album_bloc/album_bloc.dart';
+import 'package:app/src/blocs/album_bloc/album_events.dart';
 import 'package:app/src/models/person_model.dart';
 import 'package:app/src/screens/albums.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +9,10 @@ import 'package:app/src/screens/home.dart';
 import 'package:app/src/screens/About.dart';
 import 'package:app/src/screens/Profile.dart';
 import 'package:app/src/screens/UpdateProfile.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 void main() {
-  runApp(const MyApp());
+    runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +21,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiBlocProvider(
+      providers:[BlocProvider(create: (context) => AlbumBloc()..add(GetAlbums()))],
+      child:  MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -30,6 +36,7 @@ class MyApp extends StatelessWidget {
       '/updateProfile':(context) =>  UpdateProfile(person: Person(),),
       '/albums':(context) => const MyAlbums(),
       },
+    )
     );
   }
 }
