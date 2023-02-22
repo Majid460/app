@@ -70,7 +70,7 @@ class _UpdateProfile extends State<UpdateProfile>{
           ),
        const SizedBox(height: 20,),
           Center(child: 
-          Button(onPressed: () {updateData();}, title: 'Save', color: Colors.blue, font: 16),)
+          Button(onPressed: () {updateData();}, title: 'Save', color: Colors.blue, font: 16,paddingH: 0,paddingV: 0,),)
           
 
     ]),

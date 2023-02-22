@@ -1,8 +1,16 @@
 
+import 'package:app/src/blocs/Register_bloc/Register_bloc.dart';
+import 'package:app/src/blocs/Register_bloc/Register_event.dart';
 import 'package:app/src/blocs/album_bloc/album_bloc.dart';
 import 'package:app/src/blocs/album_bloc/album_events.dart';
+import 'package:app/src/blocs/login_bloc/login_bloc.dart';
 import 'package:app/src/models/person_model.dart';
+import 'package:app/src/models/user.dart';
+import 'package:app/src/screens/AddTask.dart';
+import 'package:app/src/screens/Login.dart';
+import 'package:app/src/screens/Signup.dart';
 import 'package:app/src/screens/albums.dart';
+import 'package:app/src/screens/calendar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app/practice.dart';
 import 'package:app/src/screens/home.dart';
@@ -10,9 +18,14 @@ import 'package:app/src/screens/About.dart';
 import 'package:app/src/screens/Profile.dart';
 import 'package:app/src/screens/UpdateProfile.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-void main() {
-    runApp(const MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+Future<void> main() async{
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(
+     options: DefaultFirebaseOptions.currentPlatform,
+    );
+      runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,20 +34,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MultiBlocProvider(
-      providers:[BlocProvider(create: (context) => AlbumBloc()..add(GetAlbums()))],
+      providers:[BlocProvider(create: (context) => AlbumBloc()..add(GetAlbums())),
+      BlocProvider(create: ((context) => SignUpBloc()..add(SaveUser()))),
+      BlocProvider(create: ((context)=> LoginBloc()))],
       child:  MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/home',
+      initialRoute: '/login',
       routes: {
-      '/home' :(context) => const HomePage(),
+      '/login':(context) => const Login(), 
+      '/signUp':(context)=> const SignUp(), 
+      '/home' :(context) =>  const HomePage(),
       '/about':(context) => const About(),
       '/profile':(context)=>  Profile(person: Person(),),
       '/updateProfile':(context) =>  UpdateProfile(person: Person(),),
       '/albums':(context) => const MyAlbums(),
+      '/calenderPage':(context)=>  const CalendarPage(),
+       '/addTask':(context)=>  const AddTask(),
       },
     )
     );

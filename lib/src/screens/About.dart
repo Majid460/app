@@ -8,6 +8,8 @@ class About extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
     appBar: AppBar(
      leading:Builder(builder:(context)=>IconButton(onPressed: () {
@@ -15,7 +17,8 @@ class About extends StatelessWidget{
      }, icon: const Icon(Icons.menu),tooltip: 'Drawer',)) ,
     title: const Text('About'),automaticallyImplyLeading: false,),
       drawer: const SideDrawer(),
-      body: Column(
+      body: SingleChildScrollView(child: SizedBox(width: width,height: height,
+      child: Column(
        children: [
         const SizedBox(height: 20,),
          Row(
@@ -57,23 +60,22 @@ class About extends StatelessWidget{
             ),),
                const SizedBox(height: 10,),
                //Contact Us
-             Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                child: Column(
-                  children: [
+             
+               Expanded(flex: 1,child: Column(children: [
+                
                  TextInput(hint: 'Email', textColor: Colors.grey, fontSize: 16, onChanged: (value){
                     },expands: false,icon: Icons.email,iconColor: Colors.blue,),
                    const SizedBox(height: 10,),
                   TextInput(hint: 'Comment', textColor: Colors.grey, fontSize: 16, onChanged: (value){
-                  },expands: true,icon:Icons.comment,iconColor: Colors.blue,),
+                  },expands: false,icon:Icons.comment,iconColor: Colors.blue,),
                   const SizedBox(height: 20,),
-                  Button(onPressed: () {}, title: 'Save', color: Colors.blue, font: 15),
-                   ],),),
+                  Button(onPressed: () {}, title: 'Save', color: Colors.blue, font: 18,paddingH: 0,paddingV: 0,),
+                   ],)
+               ,)
 
-              ),
+              ,
              ],
-      ),
+      ),),),
        bottomNavigationBar:BottomAppBar (
           notchMargin: 4,
           clipBehavior: Clip.antiAlias,

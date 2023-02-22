@@ -1,3 +1,4 @@
+import 'package:app/src/resources/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatelessWidget{
@@ -13,7 +14,7 @@ static final List<FloatingActionButtonLocation> centerLocations =
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: shape,
-      color: Colors.blue,
+      color: LightColors.kDarkYellow,
        child: IconTheme(
         data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary) ,
         child: Row(

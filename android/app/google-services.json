@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "545042377608",
+    "project_id": "flutter-taskapp-3a599",
+    "storage_bucket": "flutter-taskapp-3a599.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545042377608:android:70c3e5f28dcaef56f5283d",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545042377608-ag7s5egu7n4km8s6mj6so307vsq8gn0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlMyUS4E-pRsb3COQp0DQX8sNaM0Gp3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545042377608-ag7s5egu7n4km8s6mj6so307vsq8gn0r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "545042377608-6giogucr9qtq9ck4up0henehustvace8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

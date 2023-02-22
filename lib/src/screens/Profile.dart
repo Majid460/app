@@ -73,7 +73,7 @@ class Profile extends StatelessWidget{
           Button(onPressed: () { 
               Navigator.push(context, MaterialPageRoute(
             builder: (context) => UpdateProfile(person: person,),),);
-          }, title: 'Update Profile', color: Colors.blue, font: 15),)
+          }, title: 'Update Profile', color: Colors.blue, font: 15,paddingH: 0,paddingV: 0,),)
           
         ],
       ),

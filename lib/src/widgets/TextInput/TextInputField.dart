@@ -1,3 +1,4 @@
+import 'package:app/src/resources/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class TextInput extends StatefulWidget{
@@ -16,6 +17,7 @@ class TextInput extends StatefulWidget{
 }
 class _TextField extends State<TextInput>{
   late TextEditingController _controller;
+  
 
   @override
   void initState() {
@@ -31,18 +33,20 @@ class _TextField extends State<TextInput>{
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child:  TextField(
         minLines: null,
         maxLines: null,
-        
+        expands:widget.expands,
         onChanged: (value) {
         widget.onChanged(value);
+        
       },
-      
-      decoration: InputDecoration(labelText: widget.hint,prefixIcon:Icon(widget.icon),prefixIconColor: widget.iconColor ,alignLabelWithHint: true,border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-      labelStyle: TextStyle(fontSize: widget.fontSize,color: Color(widget.textColor.value)),
+      style: TextStyle(color:Color(widget.textColor.value)),
+      decoration: InputDecoration(labelText: widget.hint,
+      prefixIcon:Icon(widget.icon),prefixIconColor: widget.iconColor ,alignLabelWithHint: true,border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+      labelStyle: TextStyle(fontSize: widget.fontSize,color: Colors.grey),
      )
       ),
     );

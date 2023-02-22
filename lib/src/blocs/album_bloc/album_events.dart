@@ -1,4 +1,3 @@
-import 'package:app/src/models/albums_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class AlbumEvent extends Equatable {
