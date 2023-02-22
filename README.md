@@ -8,6 +8,7 @@ Includes:
 3. With refined App structure
 4. Api Configuration
 5. Navigator
+6. BLOC for state management
 
 
 ## Getting Started
